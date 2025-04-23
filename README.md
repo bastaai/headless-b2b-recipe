@@ -6,6 +6,16 @@ This project is a skeleton app used to showcase how to use [www.basta.app](https
 
 **basta-dl-client** is a frontend application built using [Next.js](https://nextjs.org/) with TypeScript. It leverages GraphQL, Apollo Client, and various modern tools to provide a rich user experience, including authentication, email capabilities, data handling, and UI components based on Material UI Joy and Emotion.
 
+## 🔐 Authentication
+
+We implemented a very naive user store to allow customers to test out the login flow and place bids as users. These mock users are included by default and simulate both verified and unverified accounts.
+
+```txt
+alice@example.com / basta (verified)
+bob@example.com / basta (verified)
+carol@example.com / basta (not verified)
+```
+
 ## 📆 Project Overview
 
 This client is part of the Basta platform ecosystem, focusing on dynamic data interactions, secure authentication, and modern frontend development best practices.
@@ -15,6 +25,8 @@ This client is part of the Basta platform ecosystem, focusing on dynamic data in
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
+
+Make sure your database is seeded or populated appropriately to support these users.
 
 #### SSL Development Setup
 
@@ -67,6 +79,9 @@ NEXT_PUBLIC_BASTA_WSS_URL="wss://client.api.basta.app/graphql"
 >
 > - You need to get an API token and your account ID from Basta.
 > - Generate a secure random passphrase to use as your `NEXTAUTH_SECRET`.
+> - A valid SendGrid API key is required for email functionality.
+> - To enable **Facebook social login**, you must create a [Facebook App](https://developers.facebook.com/apps/) and fill in the `FACEBOOK_CLIENT_ID` and `FACEBOOK_CLIENT_SECRET`.
+> - To enable **Google social login**, you must create a [Google Cloud OAuth client](https://console.cloud.google.com/apis/credentials) and provide the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
 
 ### 2. Installation
 
@@ -99,4 +114,62 @@ npm run export
 
 ## 📱 Code Generation
 
-This project uses [GraphQL Code Generator](https://the-guild.dev/graphql/codegen)
+This project uses [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) to auto-generate TypeScript types and hooks.
+
+```bash
+npm run codegen
+```
+
+The configuration lives in `codegen.yaml`.
+
+---
+
+## 🔐 Environment Setup
+
+To pull environment variables from Vercel:
+
+```bash
+npm run env
+```
+
+---
+
+## 🔧 Scripts
+
+| Script    | Description                                |
+| --------- | ------------------------------------------ |
+| `dev`     | Start development server                   |
+| `build`   | Compile the application                    |
+| `start`   | Start the production server                |
+| `lint`    | Lint the project using ESLint              |
+| `codegen` | Generate GraphQL types and hooks           |
+| `export`  | Export the project to static HTML          |
+| `link`    | Link project to Vercel using scope `basta` |
+| `env`     | Pull environment variables from Vercel     |
+
+---
+
+## 📚 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: TypeScript
+- **GraphQL**: Apollo Client, graphql-request, graphql-codegen
+- **UI**: MUI Joy, Emotion
+- **Authentication**: NextAuth.js
+- **Utilities**: axios, bcrypt, uuid, moment, date-fns, dinero.js
+
+---
+
+## 🧪 Dev Dependencies
+
+- ESLint for linting
+- TypeScript definitions
+- GraphQL Codegen plugins
+
+---
+
+## 📩 Contact
+
+For issues or feature requests, please open an issue in the repository or contact the development team.
+
+---

@@ -43,8 +43,6 @@ export class BastaManagementClient implements IBastaManagementClient {
           "content-type": "application/json",
         },
       });
-
-      console.log(tokenPayload.data.errors);
       return tokenPayload.data.data.createBidderToken;
     } catch (error) {
       throw new Error(error as any);

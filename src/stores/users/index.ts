@@ -1,5 +1,10 @@
 import bcrypt from "bcrypt"; // Or bcrypt
 
+/**
+ * Mock user data for authentication.
+ * This is a temporary solution for development purposes.
+ * Normally customers would implement their own user store.
+ */
 export const users = [
   {
     id: "f84bbc6c-d76a-4d43-bbb9-72a99f8a5a2a",

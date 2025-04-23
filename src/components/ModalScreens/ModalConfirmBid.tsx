@@ -2,7 +2,7 @@ import { Box, Button, Divider, Modal, ModalClose, ModalDialog } from "@mui/joy";
 import { USD } from "@dinero.js/currencies";
 import { allocate, dinero } from "dinero.js";
 import { addPercentage, formatDinero } from "src/utils/dinerojs";
-import { Item, Sale } from "src/types/graphql";
+import { Get_SaleQuery } from "src/types/graphql";
 import { useState } from "react";
 import LoadingSpinner from "../Spinner";
 import { InfoMessage } from "../InfoMessage";
@@ -27,8 +27,8 @@ export default function ConfirmBidModal({
   onClose: () => void;
   placeMaxBid(saleId: string, itemId: string, maxAmount: number): Promise<void>;
   selectedMaxBid: number;
-  sale: Sale;
-  item: Item;
+  sale: Get_SaleQuery["sale"];
+  item: Get_SaleQuery["sale"]["items"]["edges"][0]["node"];
 }) {
   const [loading, setLoading] = useState(false);
   const [bidError, setBidError] = useState(false);

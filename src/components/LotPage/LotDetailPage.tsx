@@ -2,11 +2,10 @@ import styles from "../Pages/LotDetailPage.module.css";
 
 import { useState } from "react";
 import {
-  Sale,
-  Item,
   ItemStatus,
   BidStatus,
   SaleStatus,
+  Get_SaleQuery,
 } from "src/types/graphql";
 import { calculateNextBidAsk } from "src/utils/auctions";
 import { Button } from "../Button";
@@ -16,7 +15,6 @@ import { ModalEmailVerify } from "../ModalScreens/ModalEmailVerify";
 import { ModalVerify } from "../ModalScreens/ModalVerify";
 import LoadingSpinner from "../Spinner";
 import Image from "next/image";
-import profilePic from "../../../public/ray_dalio.webp";
 import { Box, Card, Container, Grid, useTheme } from "@mui/joy";
 import { USD } from "@dinero.js/currencies";
 import { dinero } from "dinero.js";
@@ -27,8 +25,8 @@ import { useSession } from "next-auth/react";
 
 type LotDetailPageProps = {
   openSignInModal: () => void;
-  sale: Sale;
-  item: Item;
+  sale: Get_SaleQuery["sale"];
+  item: Get_SaleQuery["sale"]["items"]["edges"][0]["node"];
   bidderToken: string | null;
   placeMaxBid(saleId: string, itemId: string, maxAmount: number): Promise<void>;
 };
@@ -45,9 +43,6 @@ const LotDetailPage = ({
 
   // User Profile
   const session = useSession();
-
-  console.log("session", session);
-  console.log("item", item);
 
   // Local state
   const [loading, setLoading] = useState(false);
@@ -68,7 +63,7 @@ const LotDetailPage = ({
   const [showConfirmBidModal, setShowConfirmBidModal] = useState(false);
 
   // We expect a single lot, where the sale is a single lot.
-  const lot: Item = sale.items.edges[0].node;
+  const lot = sale.items.edges[0].node;
 
   // Number of placed bids by the logged in user
   const numberOfPlacedBids = lot.userBids.length;
@@ -175,25 +170,25 @@ const LotDetailPage = ({
                 <Button
                   onClick={() => {
                     setLoading(true);
-                    const isLoggedIn = session !== undefined;
+                    const isLoggedIn = session.status === "authenticated";
                     const isVerifiedAndLoggedIn =
                       session.data?.user?.isVerified && isLoggedIn;
                     const hasBidderToken = bidderToken !== null;
 
                     if (!isLoggedIn) {
-                      alert("Not logged in");
-                      setLoading(false);
-                      return;
-                    }
-
-                    if (!hasBidderToken) {
-                      alert("No bidder token");
+                      openSignInModal();
                       setLoading(false);
                       return;
                     }
 
                     if (!isVerifiedAndLoggedIn) {
                       setShowEmailVerificationModal(true);
+                      setLoading(false);
+                      return;
+                    }
+
+                    if (!hasBidderToken) {
+                      alert("Error: No bidder token");
                       setLoading(false);
                       return;
                     }

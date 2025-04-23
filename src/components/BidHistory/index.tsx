@@ -1,5 +1,5 @@
 import { formatDistance } from "date-fns";
-import { Bid } from "src/types/graphql";
+import { Bid, Get_SaleQuery } from "src/types/graphql";
 import styles from "./BidHistoryModal.module.css";
 import { Box, Divider } from "@mui/joy";
 import { USD } from "@dinero.js/currencies";
@@ -7,12 +7,15 @@ import { dinero } from "dinero.js";
 import { formatDinero } from "src/utils/dinerojs";
 
 export type BidHistoryProps = {
-  bids: Bid[];
-  userBids: Bid[];
+  bids: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]["bids"];
+  userBids: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]["userBids"];
 };
 
 export const BidHistory = (props: BidHistoryProps) => {
-  const bidList = (bids: Bid[], userBids: Bid[]) => {
+  const bidList = (
+    bids: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]["bids"],
+    userBids: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]["bids"]
+  ) => {
     const sorted = bids
       .filter(
         (bid, index) =>
@@ -58,7 +61,11 @@ export const BidHistory = (props: BidHistoryProps) => {
   );
 };
 
-export const BidItem = (bid: Bid, index: number, userBids: Bid[]) => {
+export const BidItem = (
+  bid: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]["bids"][0],
+  index: number,
+  userBids: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]["bids"]
+) => {
   let identifier = "#" + bid.bidderIdentifier?.slice(0, 5);
   userBids.forEach((userbid) => {
     if (userbid.amount === bid.amount && userbid.date === bid.date) {

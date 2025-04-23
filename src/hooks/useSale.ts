@@ -3,7 +3,7 @@ import {
   getSale,
   placeMaxBid as requestPlaceMaxBid,
 } from "src/clients/graphql";
-import { Sale } from "src/types/graphql";
+import { Get_SaleQuery, Sale } from "src/types/graphql";
 import { useSaleSubscriptions, useItemUpdate } from "./subscriptions";
 import useToken from "./token";
 
@@ -12,12 +12,12 @@ export function useSale(
   s: Sale,
   initToken: string | null
 ): [
-  Sale,
-  Dispatch<SetStateAction<Sale>>,
+  Get_SaleQuery["sale"],
+  Dispatch<SetStateAction<Get_SaleQuery["sale"]>>,
   (saleId: string, itemId: string, maxAmount: number) => Promise<void>
 ] {
   const token = useToken(initToken);
-  const [saleState, setSaleState] = useState<Sale>(s);
+  const [saleState, setSaleState] = useState<Get_SaleQuery["sale"]>(s);
   const [saleChanges, _saleChangesLoading] = useSaleSubscriptions(s.id);
   const [saleItemChanges, _saleItemChangesLoading] = useItemUpdate(
     s.id,
@@ -39,7 +39,10 @@ export function useSale(
     maxAmount: number
   ): Promise<void> => {
     return requestPlaceMaxBid(saleId, itemId, token, maxAmount).then((res) => {
-      if (res.bidOnItem.errorCode) {
+      if (
+        res.bidOnItem.__typename === "BidPlacedError" &&
+        res.bidOnItem.errorCode
+      ) {
         console.error("Error placing max bid", res.bidOnItem);
         throw res.bidOnItem;
       }

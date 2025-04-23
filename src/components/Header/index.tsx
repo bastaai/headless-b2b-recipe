@@ -1,6 +1,5 @@
 import { signOut, useSession } from "next-auth/react";
 import styles from "./Header.module.css";
-import useToken from "src/hooks/token";
 import Image from "next/image";
 import { LinkButton } from "../LinkButton";
 import { Button } from "../Button";

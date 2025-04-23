@@ -1,10 +1,10 @@
 import { diff } from "../../utils/dates";
-import { Sale, SaleStatus } from "src/types/graphql";
+import { Get_SaleQuery, SaleStatus } from "src/types/graphql";
 import { useState, useEffect } from "react";
 import moment from "moment";
 
 export type PropTypes = {
-  sale: Sale;
+  sale: Get_SaleQuery["sale"];
 };
 
 export const SaleStatusLine = ({ sale }: PropTypes) => {
@@ -20,7 +20,7 @@ export const SaleStatusLine = ({ sale }: PropTypes) => {
   return <span>{currLabel}</span>;
 };
 
-function getLabel(sale: Sale): string {
+function getLabel(sale: Get_SaleQuery["sale"]): string {
   switch (sale.status) {
     case SaleStatus.Opened: {
       const closingDate = moment.utc(sale.dates.closingDate).toDate();

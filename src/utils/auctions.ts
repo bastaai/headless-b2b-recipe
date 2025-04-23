@@ -1,4 +1,4 @@
-import { BidStatus, Item } from "../types/graphql";
+import { BidStatus, Get_SaleQuery, Item } from "../types/graphql";
 import { first, lastError } from "./array";
 
 /**
@@ -8,7 +8,9 @@ import { first, lastError } from "./array";
  * @param item item to calculate next bid ask for
  * @returns returns the next ask as a number.
  */
-export function calculateNextBidAsk(item: Item): number {
+export function calculateNextBidAsk(
+  item: Get_SaleQuery["sale"]["items"]["edges"][0]["node"]
+): number {
   // If the nextAsks array is empty, there are no asks. The function
   // throws an error when if this case comes up.
   if (item.nextAsks.length == 0) {
