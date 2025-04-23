@@ -26,38 +26,6 @@ This client is part of the Basta platform ecosystem, focusing on dynamic data in
 
 ### 1. Prerequisites
 
-Make sure your database is seeded or populated appropriately to support these users.
-
-#### SSL Development Setup
-
-To enable HTTPS in local development, install and configure mkcert:
-
-1. **Install mkcert (Generate Dev Certificates)**
-
-**macOS:**
-
-```bash
-brew install mkcert && mkcert -install
-```
-
-**Ubuntu:**
-
-```bash
-sudo apt install libnss3-tools
-wget -O mkcert https://github.com/FiloSottile/mkcert/releases/latest/download/mkcert-linux-amd64
-chmod +x mkcert
-sudo mv mkcert /usr/local/bin/
-mkcert -install
-```
-
-**Generate Certificates**
-
-```bash
-mkcert localhost
-```
-
-The above command generates `localhost.pem` (certificate) and `localhost-key.pem` (key).
-
 **Prepare environment variables**
 
 - Node.js v16+ (recommend using `nvm`)
@@ -79,9 +47,6 @@ NEXT_PUBLIC_BASTA_WSS_URL="wss://client.api.basta.app/graphql"
 >
 > - You need to get an API token and your account ID from Basta.
 > - Generate a secure random passphrase to use as your `NEXTAUTH_SECRET`.
-> - A valid SendGrid API key is required for email functionality.
-> - To enable **Facebook social login**, you must create a [Facebook App](https://developers.facebook.com/apps/) and fill in the `FACEBOOK_CLIENT_ID` and `FACEBOOK_CLIENT_SECRET`.
-> - To enable **Google social login**, you must create a [Google Cloud OAuth client](https://console.cloud.google.com/apis/credentials) and provide the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
 
 ### 2. Installation
 
