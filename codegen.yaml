@@ -1,4 +1,4 @@
-schema: https://client.api.basta.wtf/graphql
+schema: https://client.api.basta.app/graphql
 documents: src/queries/**/*.ts
 generates:
   src/types/graphql.ts:
