@@ -1,4 +1,4 @@
-# basta-dl-client
+# basta-client
 
 ## 🧱 About [www.basta.app](http://www.basta.app)
 
