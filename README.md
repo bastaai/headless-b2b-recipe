@@ -4,7 +4,7 @@
 
 This project is a skeleton app used to showcase how to use [www.basta.app](https://www.basta.app) in a **headless** manner. It demonstrates integration patterns, authentication, and API usage that developers can adopt when building custom frontends or services using the Basta platform as a backend.
 
-**basta-dl-client** is a frontend application built using [Next.js](https://nextjs.org/) with TypeScript. It leverages GraphQL, Apollo Client, and various modern tools to provide a rich user experience, including authentication, email capabilities, data handling, and UI components based on Material UI Joy and Emotion.
+**basta-client** is a frontend application built using [Next.js](https://nextjs.org/) with TypeScript. It leverages GraphQL, Apollo Client, and various modern tools to provide a rich user experience, including authentication, email capabilities, data handling, and UI components based on Material UI Joy and Emotion.
 
 ## 🔐 Authentication
 
