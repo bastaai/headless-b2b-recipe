@@ -1,0 +1,15 @@
+.LinkButton {
+  display: inline-block;
+  color: var(--color-main-blue);
+}
+
+.LinkButton a {
+  color: var(--color-main-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.LinkButton a:hover {
+  color: var(--color-main-blue);
+  text-decoration: underline;
+}

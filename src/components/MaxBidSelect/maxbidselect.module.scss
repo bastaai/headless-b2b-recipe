@@ -1,0 +1,139 @@
+.select_wrapper {
+  label,
+  input {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    border: 1px solid #ababf0;
+    background-color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 256px;
+    line-height: 21px;
+    padding-left: 16px;
+    font-size: 16px;
+    height: 48px;
+    color: #1f1f5c;
+    font-size: 16px;
+    line-height: 21px;
+    ::placeholder {
+      font-weight: 400;
+      color: #595959;
+    }
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1f1f5c;
+  }
+}
+
+.select_inner:focus-within {
+  & .select__control {
+    box-shadow: inset 0 0 0 2px var(--color-main-dark-blue);
+  }
+
+  input {
+    box-shadow: none !important;
+  }
+}
+
+.select_inner {
+  width: 100%;
+  font-size: 16px;
+
+  & .select__control {
+    border: 1px solid #000000;
+    border-radius: 8px;
+  }
+
+  & .select__container {
+    height: 48px;
+  }
+}
+
+.tooltip {
+  display: inline;
+}
+
+.tooltip img {
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 390px;
+  width: 390px;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: #f7f7fe;
+  transition: opacity 0.2s;
+}
+
+.tooltip .tooltiptext p {
+  margin: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #1f1f5c;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 899px) {
+  .tooltip .tooltiptext {
+    top: 300px;
+  }
+}
+
+@media (max-width: 822px) {
+  .tooltip .tooltiptext {
+    top: 330px;
+  }
+}
+
+@media (max-width: 614px) {
+  .tooltip .tooltiptext {
+    top: 360px;
+  }
+}
+
+@media (max-width: 569px) {
+  .tooltip .tooltiptext {
+    top: 325px;
+  }
+}
+
+@media (max-width: 535px) {
+  .tooltip .tooltiptext {
+    top: 355px;
+  }
+}
+
+@media (max-width: 441px) {
+  .tooltip .tooltiptext {
+    width: 350px;
+    top: 365px;
+  }
+}
+
+@media (max-width: 396px) {
+  .tooltip .tooltiptext {
+    top: 430px;
+  }
+}
+
+@media (max-width: 381px) {
+  .tooltip .tooltiptext {
+    top: 460px;
+  }
+}

@@ -1,0 +1,220 @@
+.LotDetailPage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+}
+
+.fullRow {
+  grid-column: 1/13;
+}
+
+.smallRow {
+  grid-column: 1/9;
+}
+
+.blockMedium {
+  grid-column: 1/7;
+}
+
+.blockImg {
+  position: relative;
+  grid-column: 7/13;
+}
+
+.blockImg img {
+  max-height: 773px;
+  border-radius: 8px;
+}
+
+.blockImgMobile {
+  position: relative;
+  display: none;
+}
+
+.blockLarge {
+  margin-top: 24px;
+  grid-column: 1/13;
+  margin-bottom: 24px;
+}
+
+.innerBlock {
+  margin-top: 32px;
+}
+
+.blockFit {
+  max-height: 670px;
+  margin-top: 8px;
+  grid-column: 1/13;
+  display: flex;
+  justify-content: left;
+  gap: 32px;
+  font-size: 1.625rem;
+  text-align: center;
+}
+
+@media (max-width: 1156px) {
+  .blockFit {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+.bidBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+@media (max-width: 1156px) {
+  .bidBlock {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.bidInfoBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  border-radius: 4px;
+  padding: 16px 24px 16px 24px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+.bidInfoWinning {
+  background: #e8f9e9;
+}
+
+.bidInfoLosing {
+  background: #faebe9;
+}
+
+.yourMaxBid {
+  text-align: right;
+}
+
+.bidSelect {
+  width: 100%;
+}
+
+.bidButton {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.place_bid_inner_button {
+  justify-items: center;
+}
+
+.currentBidBlock {
+  font-weight: 500;
+  font-size: 24px;
+  color: #272778;
+  display: inline-block;
+}
+
+.verificationMessage {
+  color: #1f1f5c;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.register_now {
+  width: 256px;
+}
+
+.VideoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 10px;
+  margin-top: 36px;
+}
+
+.video {
+  display: inline-block;
+}
+
+.bidCount {
+  display: inline-block;
+  margin-left: 14px;
+  font-size: 14px;
+  line-height: 30px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-main-dark-blue);
+}
+
+.h2LessLineHeight {
+  line-height: 2rem;
+}
+
+@media (max-width: 1156px) {
+  .blockMedium {
+    grid-column: 1/13;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .blockImg {
+    position: relative;
+    display: none;
+  }
+
+  .blockImgMobile {
+    position: relative !important;
+    display: block;
+    margin-top: 32px;
+    grid-column: 1/13;
+    height: auto;
+  }
+
+  .blockImgMobile img {
+    position: relative !important;
+    height: unset !important;
+    object-fit: contain;
+    width: 100% !important;
+    border-radius: 8px;
+  }
+
+  .register_now {
+    width: 100%;
+  }
+
+  .blockLarge {
+    margin-top: 24px;
+    grid-column: 1/13;
+    margin-bottom: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .VideoContainer {
+    display: block;
+    width: 100%;
+    margin-top: 36px;
+  }
+  .video {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .bidCount {
+    margin-left: 0px;
+    display: block;
+    width: fit-content;
+  }
+}
+
+.errorBid {
+  padding: 12px;
+  margin-bottom: 24px;
+}
+.errorBid span {
+  font-size: 16px;
+}

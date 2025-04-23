@@ -1,0 +1,10 @@
+.Portrait {
+  position: absolute;
+  right: -60px;
+  width: 640px;
+  height: 788px;
+  background-image: url("/portrait.webp");
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+  background-position: 990px;
+}

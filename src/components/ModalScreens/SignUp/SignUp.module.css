@@ -1,0 +1,26 @@
+.Wrapper button {
+  height: 48px;
+  width: 100%;
+  margin: 8px auto;
+}
+
+.Wrapper button img {
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+}
+
+.Wrapper input {
+  height: 48px;
+  width: 100%;
+  margin: 8px 0px 0px 0px;
+}
+
+.TextDivider {
+  width: 100%;
+  margin: 16px 0px 8px 0px;
+}
+
+.Info {
+  margin: 8px auto;
+  height: 48px;
+}

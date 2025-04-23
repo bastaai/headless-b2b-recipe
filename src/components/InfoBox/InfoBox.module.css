@@ -1,0 +1,35 @@
+.InfoBox {
+  width: 264px;
+  height: 264px;
+  background-color: var(--color-10p-light-purple);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.InfoBox span {
+  color: var(--color-main-dark-blue);
+  font-weight: 400;
+  display: inline-block;
+  margin: 60px;
+}
+
+@media (max-width: 575px) {
+  .InfoBox {
+    height: 185px;
+    width: 185px;
+  }
+
+  .InfoBox span {
+    font-size: 22px;
+    margin: 40px;
+  }
+}
+
+@media (max-width: 417px) {
+  .InfoBox {
+    height: 156px;
+    width: 156px;
+  }
+}

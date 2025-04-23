@@ -1,0 +1,19 @@
+.errorBid {
+  padding: 12px;
+}
+
+.errorBid span {
+  font-size: 16px;
+}
+
+.modalHero {
+  text-align: center;
+  font-size: 24px;
+  color: #1f1f5c;
+}
+
+.modalSpan {
+  font-size: 12px;
+  color: #1f1f5c;
+  text-align: center;
+}

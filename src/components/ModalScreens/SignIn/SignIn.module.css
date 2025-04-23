@@ -1,0 +1,47 @@
+.Wrapper button {
+  height: 48px;
+  width: 100%;
+  margin: 8px auto;
+}
+
+.Wrapper button img {
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+}
+
+.Wrapper input {
+  height: 48px;
+  width: 100%;
+  margin: 8px 0px 8px 0px;
+}
+
+.Wrapper input:last-child {
+  margin: 8px 0px 0px 0px;
+}
+
+.TextDivider {
+  width: 100%;
+  margin: 16px 0px 8px 0px;
+}
+
+.Info {
+  margin: 8px auto;
+  height: 48px;
+}
+
+.ForgotPasswordContainer {
+  width: 100%;
+  margin: 8px 0px 16px 0px;
+}
+.Wrapper form div a {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration-line: underline;
+  margin-left: 91.445px;
+}
+@media (max-width: 417px) {
+  .Wrapper form div a {
+    margin-left: 75px;
+  }
+}

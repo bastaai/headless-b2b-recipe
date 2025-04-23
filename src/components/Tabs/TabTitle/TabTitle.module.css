@@ -1,0 +1,12 @@
+.Title {
+  text-align: center;
+  flex: auto;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.Title[class~="active"] {
+  color: #1f1f5c;
+  border-bottom: 1px solid #1f1f5c;
+  font-weight: 700;
+}

@@ -1,0 +1,6 @@
+schema: https://client.api.basta.wtf/graphql
+documents: src/queries/**/*.ts
+generates:
+  src/types/graphql.ts:
+    - typescript
+    - typescript-operations

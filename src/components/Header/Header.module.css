@@ -1,0 +1,99 @@
+.Header {
+  height: 136px;
+  display: grid;
+  grid-column: 1/13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  margin-bottom: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.LogoContainer {
+  grid-column: 1/4;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  padding: 4px;
+}
+
+.Logo {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.LogoMobile {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.icon {
+  display: inline;
+  white-space: nowrap;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.iconObj {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 899px) {
+  .Logo {
+    display: none;
+  }
+}
+
+@media (min-width: 899px) {
+  .LogoMobile {
+    display: none;
+  }
+}
+
+.loginControl {
+  grid-column: 11/13;
+  font-size: 0.875rem;
+}
+
+.loggedInControl {
+  grid-column: 10/13;
+  color: var(--color-main-blue);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.LogoutButtonContainer {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  min-width: 64px;
+}
+
+@media (max-width: 899px) {
+  .LogoContainer {
+    grid-column: 1/1;
+    display: flex;
+    align-items: center;
+  }
+
+  .loginControl {
+    grid-column: 8/13;
+    font-size: 0.875rem;
+  }
+
+  .loggedInControl {
+    grid-column: 2/13;
+    color: var(--color-main-blue);
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .userName {
+    margin-right: 40px;
+  }
+}

@@ -1,0 +1,22 @@
+.Terms {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Terms p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--color-main-blue);
+}
+
+.Terms a {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: var(--color-main-blue);
+}

@@ -1,0 +1,39 @@
+.Button {
+  border: 0;
+  border-radius: 4px;
+  background-color: #4646c7;
+  display: block;
+  height: 48px;
+  font-size: 14px;
+  width: 100%;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: #ababf0;
+  color: white;
+  transition: all ease-out 0.35s;
+}
+
+.Button[class~="Secondary"] {
+  font-weight: 500;
+  background-color: white;
+  color: #4646c7;
+  border: 1px solid var(--color-main-purple);
+}
+.Button[class~="Secondary"]:hover {
+  background-color: #4646c7;
+  color: #fff;
+  transition: all ease-out 0.35s;
+}
+
+@media (max-width: 1156px) {
+  .Button {
+    height: 56px;
+  }
+  .Button[class~="Secondary"] {
+    height: 48px;
+  }
+}

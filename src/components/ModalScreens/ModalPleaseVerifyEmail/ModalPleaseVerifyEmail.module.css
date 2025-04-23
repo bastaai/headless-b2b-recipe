@@ -1,0 +1,81 @@
+.ModalContainer {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 24px;
+  min-width: 337px;
+  max-width: 400px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.verify_title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: left;
+  color: #1f1f5c;
+}
+
+.verify_description {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.verify_description span {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.verify_description span:first-child {
+  padding-bottom: 14px;
+}
+
+.ModalContent {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.ModalContainer form div a {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration-line: underline;
+}
+
+.ModalContainer p span {
+  font-weight: 700;
+  display: contents;
+}
+
+.ModalContainer button {
+  height: 48px;
+  margin: 8px 0px;
+}
+
+@media (max-width: 417px) {
+  .ModalContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .ModalContent {
+    width: 304px;
+    margin: 20px auto;
+  }
+}
+
+.Info {
+  margin: 8px auto;
+  height: 48px;
+  width: 100%;
+}

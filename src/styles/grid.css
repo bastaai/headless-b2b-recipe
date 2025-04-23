@@ -1,0 +1,12 @@
+.contentContainer {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+}

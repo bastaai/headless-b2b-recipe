@@ -1,0 +1,27 @@
+.RecoveryPage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  min-height: calc(100vh - 475px);
+}
+.blockMedium {
+  grid-column: 1/7;
+}
+
+@media (max-width: 1156px) {
+  .blockMedium {
+    grid-column: 1/13;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.blockMedium input {
+  margin: 8px 0px;
+}
+
+.Info {
+  margin: 8px auto;
+  height: 48px;
+  width: 100%;
+}

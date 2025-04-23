@@ -1,0 +1,49 @@
+.Input {
+  border: 1px solid #ababf0;
+  border-radius: 4px;
+  background-color: white;
+  display: inline-block;
+  height: 48px;
+  font-size: 14px;
+  width: 100%;
+  font-weight: 400;
+
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.ErrorInput {
+  border: 1px solid var(--color-support-warning);
+  color: var(--color-support-warning);
+}
+
+.Input::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.InputContainer {
+  position: relative;
+}
+
+.Icon {
+  position: absolute;
+  display: inline-block;
+  top: 23px;
+  right: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 417px) {
+  .Icon {
+    position: absolute;
+    display: inline-block;
+    top: 23px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
